@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSPro4OSP", "GSPro4OSP.csproj", "{70EB9623-A7F6-4F78-BF6C-C441A252E0C8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AbstractOpenSkyPlusApi", "..\OpenSkyPlus\AbstractOpenSkyPlusApi\AbstractOpenSkyPlusApi.shproj", "{03716C64-7C66-46B2-BD04-ECD60877984B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70EB9623-A7F6-4F78-BF6C-C441A252E0C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EB9623-A7F6-4F78-BF6C-C441A252E0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EB9623-A7F6-4F78-BF6C-C441A252E0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EB9623-A7F6-4F78-BF6C-C441A252E0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CE41579-572C-4BC1-89DB-3CC8EFF247F6}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\OpenSkyPlus\AbstractOpenSkyPlusApi\AbstractOpenSkyPlusApi.projitems*{03716c64-7c66-46b2-bd04-ecd60877984b}*SharedItemsImports = 13
+		..\OpenSkyPlus\AbstractOpenSkyPlusApi\AbstractOpenSkyPlusApi.projitems*{70eb9623-a7f6-4f78-bf6c-c441a252e0c8}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal

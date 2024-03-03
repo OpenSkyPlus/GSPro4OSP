@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<LangVersion>Latest</LangVersion>
+	<Description>A GSPro Plugin for the OpenSkyPlus Framework</Description>
+	<Version>1.0.1</Version>
+	<Title>GSPro4OSP</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="nulastudio.NetBeauty" Version="2.1.4.3" />
+    <PackageReference Include="nulastudio.NetCoreBeauty" Version="1.2.9.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="pluginsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Import Project="..\OpenSkyPlus\AbstractOpenSkyPlusApi\AbstractOpenSkyPlusApi.projitems" Label="Shared" />
+
+</Project>

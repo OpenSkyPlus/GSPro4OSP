@@ -1,0 +1,9 @@
+{
+	"PluginSettings" : {
+		"Hostname" : "127.0.0.1",
+		"Port" : 921,
+		"MaxRetries" : -1,
+		"RetryDelay" : 30000,
+		"DistanceToPtMode": 30
+	}
+}
