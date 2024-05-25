@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using OpenSkyPlusApi;
 
 namespace GSPro4OSP;
@@ -26,12 +27,15 @@ internal static class GsProApi
             switch (responseCode)
             {
                 case 201:
+                    if (!string.IsNullOrEmpty(response?.Player?.Handed))
+                    {
+                        CheckPlayerHandedness(response.Player.Handed);
+                    }
                     if ((response?.Player?.DistanceToTarget ?? 0) != 0)
                     {
                         CalculatePuttingMode(response.Player?.Club, response.Player?.DistanceToTarget ?? 0);
                         _launchMonitorApi.ReadyForNextShot();
                     }
-
                     break;
                 case 202:
                     InMatch = true;
@@ -53,19 +57,28 @@ internal static class GsProApi
         }
     }
 
+    private static void CheckPlayerHandedness(string handed)
+    {
+        var handedness = handed == "RH" ? Handedness.Right : Handedness.Left;
+        _launchMonitorApi.SetHandedness(handedness);
+    }
+
     private static void CalculatePuttingMode(string club, float distanceToPin)
     {
         try
         {
             var distanceToPtMode = ConfigurationManager.Configuration.DistanceToPtMode;
+            var puttingModeClubs = ConfigurationManager.Configuration.PuttingModeClubs;
             var shotMode = _launchMonitorApi.GetShotMode();
 
             switch (distanceToPtMode)
             {
+                // No switch
                 case -1:
                     break;
+                // Switch based on club
                 case 0:
-                    if (club == "PT" || club == "LW" || club == "SW")
+                    if (puttingModeClubs.Contains(club))
                     {
                         if (shotMode == ShotMode.Normal) _launchMonitorApi.SetPuttingMode();
                     }
@@ -73,8 +86,8 @@ internal static class GsProApi
                     {
                         if (shotMode == ShotMode.Putting) _launchMonitorApi.SetNormalMode();
                     }
-
                     break;
+                // Switch based on distance to pin or putter club
                 default:
                     if (distanceToPin != 0)
                     {
@@ -87,7 +100,6 @@ internal static class GsProApi
                             if (shotMode == ShotMode.Putting) _launchMonitorApi.SetNormalMode();
                         }
                     }
-
                     break;
             }
         }

@@ -4,6 +4,7 @@
 		"Port" : 921,
 		"MaxRetries" : -1,
 		"RetryDelay" : 30000,
-		"DistanceToPtMode": 30
+		"DistanceToPtMode": 0, // 0: switch based on club list below, -1: never switch, >0: switch based on distance to pin or putter club
+		"PuttingModeClubs": [ "PT" ]
 	}
 }
