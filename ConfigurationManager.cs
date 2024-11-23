@@ -35,4 +35,9 @@ public class PluginSettings
     // 0: switch based on club
     // -1: never switch
     public float DistanceToPtMode { get; set; }
+
+    /// <summary>
+    /// When switching based on clubs, this list is used to switch to Putting mode
+    /// </summary>
+    public string[] PuttingModeClubs { get; set; }
 }

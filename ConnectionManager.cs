@@ -33,6 +33,13 @@ internal static class ConnectionManager
         MaxRetries = config.MaxRetries;
         RetryDelay = config.RetryDelay;
         AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+
+        if (config.PuttingModeClubs == null)
+        {
+            _log($"PuttingModeClubs not specified in config, defaulting to \"PT\"", LogLevels.Warning);
+            config.PuttingModeClubs = ["PT"];
+        }
+        _log($"DistanceToPtMode: {config.DistanceToPtMode}, PuttingModeClubs: {string.Join(",", config.PuttingModeClubs)}", LogLevels.Info);
     }
 
     public static async Task Connect()
