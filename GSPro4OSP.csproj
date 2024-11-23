@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
 	<LangVersion>Latest</LangVersion>
 	<Description>A GSPro Plugin for the OpenSkyPlus Framework</Description>
-	<Version>1.0.1</Version>
+	<Version>1.1.1</Version>
 	<Title>GSPro4OSP</Title>
   </PropertyGroup>
 
